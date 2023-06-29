@@ -9,33 +9,70 @@ body {
 h1,
 h2,
 h3 {
-    color: #ffffff;
+  color: #ffffff;
+}
+
+.container {
+  padding: 40px;
+  padding-right: 0;
 }
 
 .title {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    justify-content: center;
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-content: center;
+  gap: 30px;
 }
 
 .gallery .card {
-    transition: .1s linear;
+  transition: 0.1s linear;
 }
 
 .gallery .card:hover {
-    transform: scale(1.1);
-    z-index: 7;
+  transform: scale(1.1);
+  z-index: 10;
 }
 
 p {
-    font-size: 12px;
+  font-size: 15px;
 }
 
-.card-header-title {
-    color: white;
+.detail__name {
+  position: absolute;
+  z-index: 5;
+  top: 400px;
+}
+
+.detail__container {
+  margin-top: 100px;
+}
+
+.detail__page {
+    max-width: 60%;
+    max-height: 60%;
+    border-style: solid;
+    border-color: red;
+    margin: auto;
+}
+
+.movie-synopsis{
+    border-style: solid;
+    border-color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 4px 2px 2px white;
+    border-radius: 25px;
+}
+
+.synopsis_title {
+    margin: 10px;
+}
+
+.detail_buttons {
+    margin: 10px;
 }

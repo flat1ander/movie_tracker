@@ -3,6 +3,8 @@
 {% block content %}
 
 <h1 class="title pt-5">Movies</h1>
+<a class="button is-dark add-movie-button" href="{% url 'movie_create' %}">Add a Movie</a>
+<br><br>
 <div class="gallery">
   {% for movie in movies %}
   <a href="">
