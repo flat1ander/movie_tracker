@@ -91,3 +91,25 @@ p {
 .movie_date {
   margin: 10px;
 }
+
+.navigation {
+  margin-bottom: 25px;
+}
+
+.main_content_container {
+  max-width: 85%;
+  margin: auto;
+}
+
+.navbar-item,
+.navbar-link {
+  color: #fff; 
+}
+
+.navbar-burger {
+  color: white;
+}
+
+.burger-text {
+  color: black;
+}
