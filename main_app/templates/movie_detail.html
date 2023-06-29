@@ -6,7 +6,7 @@
     </div>
     <div class="detail__container">
         <div class="buttons detail_buttons">
-            <a href="" class="button is-info edit_button">
+            <a href="{% url 'movie_update' movie.pk %}" class="button is-info edit_button">
                 <span class="icon">
                     <i class="fas fa-edit"></i>
                 </span>
@@ -18,7 +18,8 @@
             </a>
         </div>
         <div class="detail__about">
-            <h4 class="title is-4 synopsis_title">Synopsis</h4>
+            <h3 class="title is-3 movie_name">{{movie.name}}</h3>
+            <h6 class="title is-6 movie_date">Released: {{movie.release_date}}</h6>
             <p class="movie-synopsis">{{movie.synopsis}}</p>
         </div>
     </div>

@@ -3,15 +3,16 @@ from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Movie
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import DetailView
+from django.urls import reverse
 
 class Home(TemplateView):
     template_name = "home.html"
 
 
-class About (TemplateView):
-    template_name = "about.html"
+class Streaming(TemplateView):
+    template_name = "streaming_playlist.html"
 
 
 class MovieList(TemplateView):
@@ -26,9 +27,17 @@ class MovieCreate(CreateView):
     model = Movie
     fields = ['name', 'image', 'release_date', 'synopsis', 'rating']
     template_name = "movie_create.html"
-    success_url = "/movies/"
+    def get_success_url(self):
+        return reverse('movie_detail', kwargs={'pk': self.object.pk})
 
 
 class MovieDetail(DetailView):
     model = Movie
     template_name = "movie_detail.html"
+
+class MovieUpdate(UpdateView):
+    model = Movie
+    fields = ['name', 'image', 'release_date', 'synopsis', 'rating']
+    template_name = "movie_update.html"
+    def get_success_url(self):
+        return reverse('movie_detail', kwargs={'pk': self.object.pk})
