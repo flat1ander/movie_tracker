@@ -52,15 +52,6 @@ p {
   margin-top: 50px;
 }
 
-.detail__page {
-    max-width: 60%;
-    max-height: 60%;
-    border-style: solid;
-    border-color: red;
-    margin: auto;
-    border-radius: 25px;
-}
-
 .movie-synopsis{
     border-style: solid;
     border-color: white;
@@ -103,13 +94,22 @@ p {
 
 .navbar-item,
 .navbar-link {
-  color: #fff; 
+  color: black;
 }
 
 .navbar-burger {
-  color: white;
+  color: black;
 }
 
 .burger-text {
   color: black;
+}
+
+.detail__page {
+  max-width: 60%;
+  max-height: 60%;
+  border-style: solid;
+  border-color: red;
+  margin: auto;
+  border-radius: 25px;
 }

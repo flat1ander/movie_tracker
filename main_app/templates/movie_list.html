@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1 class="title pt-5">Movies to Stream</h1>
+<h1 class="title pt-5">Movies</h1>
 <a class="button is-dark add-movie-button" href="{% url 'movie_create' %}">Add a Movie</a>
 <br><br>
 <div class="gallery">
@@ -15,7 +15,7 @@
         </figure>
       </div>
       <div class="card-header has-background-danger-dark">
-        <p class="card-header-title" style="color:white">{{movie.name}}</p>
+        <p class="card-header-title" style="color:black;">{{movie.name}}</p>
       </div>
     </div>
   </a>

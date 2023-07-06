@@ -11,8 +11,8 @@ class Home(TemplateView):
     template_name = "home.html"
 
 
-class Streaming(TemplateView):
-    template_name = "streaming_playlist.html"
+class Collections(TemplateView):
+    template_name = "collections.html"
 
 
 class MovieList(TemplateView):
