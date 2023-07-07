@@ -15,5 +15,18 @@ class Movie(models.Model):
         ordering = ['name']
 
 
-# Streamer Model Below:
+# Cast Model Below:
+class Cast(models.Model):
+    name = models.CharField(max_length=150)
+    role = models.CharField(max_length=150)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="casts")
+    def __str__(self):
+        return self.name
 
+
+# #Collection Model Below:
+class Collection(models.Model):
+    title = models.CharField(max_length=150)
+    casts = models.ManyToManyField(Cast)
+    def __str__(self):
+        return self.title

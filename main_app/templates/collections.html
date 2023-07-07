@@ -1,6 +1,23 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 {% block content %}
+<div class="collections">
+    {% for collection in collections %}
 
-<h1>Collections</h1>
+        <div class="collection mb-5">
+            <h3 class="title is-3 has-text-white">{{collection.title}}</h3>
+            <hr />
 
+            {% for cast in collection.casts.all %}
+
+                <div class="cast member">
+                    <span><b>{{cast.name}}</b></span>
+                    <span>{{cast.role}}</span>
+                </div>
+
+            {% endfor %}
+        </div>
+    {% empty %} 
+        <div class="collection mb-5">"There are no actors in this collection"</div>
+    {% endfor %}
+</div>
 {% endblock %}

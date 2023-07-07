@@ -5,6 +5,10 @@
         <img class = "movie_image" src="{{movie.image}}" alt="{{movie.name}}" />
     </div>
     <div class="detail__container">
+        <div class="detail__about">
+            <h3 class="title is-3 movie_name">{{movie.name}}</h3>
+            <h6 class="title is-6 movie_date">Released: {{movie.release_date}}</h6>
+        </div>
         <div class="buttons detail_buttons">
             <a href="{% url 'movie_update' movie.pk %}" class="button is-info edit_button">
                 <span class="icon">
@@ -17,11 +21,48 @@
                 </span>
             </a>
         </div>
-        <div class="detail__about">
-            <h3 class="title is-3 movie_name">{{movie.name}}</h3>
-            <h6 class="title is-6 movie_date">Released: {{movie.release_date}}</h6>
-            <p class="movie-synopsis">{{movie.synopsis}}</p>
+        <div class="detail__cast">
+            <h3 class="title">Cast & Crew</h3>
+            <form class="mb-5" action="{% url 'cast_create' movie.pk %}" method="post">
+                {% csrf_token %}
+                <div class="field has-addons">
+                    <div class="control">
+                        <input
+                            class="input"
+                            type="text"
+                            name="name"
+                            placeholder="Actor"
+                            required
+                        />
+                    </div>
+                    <div class="control">
+                        <input
+                            class="input"
+                            type="text"
+                            name="role"
+                            placeholder="Role"
+                            required
+                        />
+                    </div>
+                    <div class="control">
+                        <input class="button is-dark" type="submit" value="Add Cast Member" />
+                    </div>
+                </div>
+            </form>
+            {% for cast in movie.casts.all %}
+            <div class="cast">
+                <span>{{cast.name}} - </span>
+                <span>{{cast.role}}</span>
+            </div>
+            {% empty %}
+            <article class="notice">
+                <div>
+                    <p>No Cast & Crew Available</p>
+                </div>
+            </article>
+            {% endfor %}
         </div>
+        <p class="movie-synopsis">{{movie.synopsis}}</p>
     </div>
 </div>
 

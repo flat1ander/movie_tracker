@@ -9,5 +9,5 @@ urlpatterns = [
     path('movies/<int:pk>/', views.MovieDetail.as_view(), name="movie_detail"),
     path('movies/<int:pk>/update', views.MovieUpdate.as_view(), name="movie_update"),
     path('movies/<int:pk>/delete', views.MovieDelete.as_view(), name="movie_delete"),
-    
+    path('movies/<int:pk>/casts/new/', views.CastCreate.as_view(), name="cast_create")
 ]

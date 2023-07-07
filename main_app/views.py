@@ -2,17 +2,25 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
-from .models import Movie
+from .models import Movie, Cast, Collection
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
+from django.shortcuts import redirect
 
 class Home(TemplateView):
     template_name = "home.html"
-
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context["collections"] = Collections.objects.all()
+    #     return context
 
 class Collections(TemplateView):
     template_name = "collections.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["collections"] = Collection.objects.all()
+        return context
 
 
 class MovieList(TemplateView):
@@ -46,4 +54,12 @@ class MovieDelete(DeleteView):
     model = Movie
     template_name = "movie_delete.html"
     success_url = "/movies/"
+
+class CastCreate(View):
+    def post (self, request, pk):
+        name = request.POST.get("name")
+        role = request.POST.get("role")
+        movie = Movie.objects.get(pk=pk)
+        Cast.objects.create(name=name, role=role, movie=movie)
+        return redirect('movie_detail', pk=pk)
 
