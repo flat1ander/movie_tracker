@@ -10,10 +10,6 @@ from django.shortcuts import redirect
 
 class Home(TemplateView):
     template_name = "home.html"
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context["collections"] = Collections.objects.all()
-    #     return context
 
 class Collections(TemplateView):
     template_name = "collections.html"
@@ -43,6 +39,11 @@ class MovieDetail(DetailView):
     model = Movie
     template_name = "movie_detail.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['collections'] = Collection.objects.all()
+        return context
+
 class MovieUpdate(UpdateView):
     model = Movie
     fields = ['name', 'image', 'release_date', 'synopsis', 'rating']
@@ -63,3 +64,11 @@ class CastCreate(View):
         Cast.objects.create(name=name, role=role, movie=movie)
         return redirect('movie_detail', pk=pk)
 
+class CollectionCastAssoc(View):
+    def get(self, request, pk, cast_pk):
+        assoc = request.GET.get("assoc")
+        if assoc == "remove":
+            Collection.objects.get(pk=pk).casts.remove(cast_pk)
+        if assoc == "add":
+            Collection.objects.get(pk=pk).casts.add(cast_pk)
+        return redirect('collections')

@@ -9,9 +9,16 @@
 
             {% for cast in collection.casts.all %}
 
-                <div class="cast member">
+                <div class="cast">
                     <span><b>{{cast.name}}</b></span>
                     <span>{{cast.role}}</span>
+                    <span>
+                        <a href="{% url 'collection_cast_assoc' collection.pk cast.pk %}?assoc=remove" class="button is-danger is-outlined">
+                        <span class="icon is-small">
+                            <i class="fas fa-trash"></i>
+                        </span>
+                        </a>
+                    </span>
                 </div>
 
             {% endfor %}

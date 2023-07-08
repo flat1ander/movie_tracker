@@ -132,7 +132,7 @@ p {
   width: 100%;
   padding: 10px;
   display: grid;
-  grid-template-columns: 0.2fr 0.8fr;
+  grid-template-columns: 0.2fr 0.5fr 0.3fr;
   border-radius: 5px;
 }
 
@@ -142,5 +142,15 @@ p {
 }
 
 .detail_buttons {
+  padding: 10px;
+}
+
+.form_styling {
+  max-width: 60%;
+  max-height: 60%;
+  border-style: solid;
+  border-color: red;
+  margin: auto;
+  border-radius: 25px;
   padding: 10px;
 }
