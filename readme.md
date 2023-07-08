@@ -9,6 +9,9 @@ INDEX PAGE:
 SHOW PAGE:
 ![alt text](https://i.imgur.com/tGw3Lgk.png)
 
+## Data Models
+![alt text](https://i.imgur.com/oBoWzhr.png)
+
 ## User Stories
 - As a user, I will be able to view a database of movies.
 - As a user, I will be able to add a new movie to the database.
