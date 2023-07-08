@@ -4,10 +4,10 @@ Welcome to Matt's Movie Tracker! Movie tracker is a fully functional CRUD applic
 
 ## Wireframes
 INDEX PAGE:
-![alt text](https://imgur.com/a/OsGcF0v)
+![alt text](https://i.imgur.com/mLo7rPa.png)
 
 SHOW PAGE:
-![alt text](https://imgur.com/a/fM8o81V)
+![alt text](https://i.imgur.com/tGw3Lgk.png)
 
 ## User Stories
 - As a user, I will be able to view a database of movies.
