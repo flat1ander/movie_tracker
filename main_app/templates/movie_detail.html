@@ -70,12 +70,14 @@
                       <div class="dropdown-menu" id="dropdown-menu" role="menu">
                         <div class="dropdown-content">
                           {% for collection in collections %}
+                          {% if collection.user == request.user %}
                           <a
                             href="{% url 'collection_cast_assoc' collection.pk cast.pk %}?assoc=add"
                             class="dropdown-item"
                           >
                             {{collection.title}}
                           </a>
+                          {% endif %}
                           {% endfor %}
                         </div>
                       </div>

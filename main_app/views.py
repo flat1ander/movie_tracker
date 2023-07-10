@@ -11,6 +11,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django import forms
 
 class Home(TemplateView):
     template_name = "home.html"
@@ -104,3 +105,22 @@ class Signup(View):
         else:
             context = {"form": form}
             return render(request, "registration/signup.html", context)
+
+class CollectionCreate(View):
+    def get(self, request):
+        form = CollectionForm()
+        return render(request, 'create_collection.html', {'form': form})
+
+    def post(self, request):
+        form = CollectionForm(request.POST)
+        if form.is_valid():
+            collection = form.save(commit=False)
+            collection.user = request.user 
+            collection.save()
+            return redirect('collections')
+        return render(request, 'create_collection.html', {'form': form})
+
+class CollectionForm(forms.ModelForm):
+    class Meta:
+        model = Collection
+        fields = ['title']
