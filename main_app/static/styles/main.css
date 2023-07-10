@@ -154,3 +154,26 @@ p {
   border-radius: 25px;
   padding: 10px;
 }
+
+.main_home_container {
+  max-width: 60%;
+  max-height: 60%;
+  border-style: solid;
+  border-color: red;
+  margin: auto;
+  border-radius: 25px;
+  padding: 10px;
+  background-image: url("https://i.imgur.com/bKIV3IR.jpg");
+}
+
+.home_header {
+  font-size: xx-large
+}
+
+.home_content {
+  font-size: large;
+}
+
+.home_subheader {
+  font-size: x-large;
+}

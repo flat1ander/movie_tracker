@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Movie Model Below:
 class Movie(models.Model):
@@ -7,6 +8,7 @@ class Movie(models.Model):
     release_date = models.CharField(max_length=200)
     synopsis = models.CharField(max_length=5000)
     rating = models.IntegerField(default=0)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.name
@@ -28,5 +30,11 @@ class Cast(models.Model):
 class Collection(models.Model):
     title = models.CharField(max_length=150)
     casts = models.ManyToManyField(Cast)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     def __str__(self):
         return self.title
+
+# CollectionMovie Model
+class CollectionMovie(models.Model):
+    collection = models.ForeignKey(Collection, on_delete=models.CASCADE)
+    movie = models.ForeignKey('Movie', on_delete=models.CASCADE)

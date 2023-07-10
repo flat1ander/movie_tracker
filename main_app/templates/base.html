@@ -32,12 +32,19 @@
                     <span aria-hidden="true" class="burger-text"></span>
                 </a>
             </div>
+        {% if user.is_authenticated %}
             <div class="navbar-menu navbar-end">
+                <span class="navbar-item">Welcome: {{user.username}}</span>
+                <a class="navbar-item" href="{% url 'logout' %}">Logout</a>
                 <a class="navbar-item" href="/movies">Movies</a>
-            </div>
-            <div class="navbar-menu navbar-end">
                 <a class="navbar-item" href="/collections">Collections</a>
             </div>
+            {% else %}
+            <div class="navbar-menu navbar-end">
+                <a class="navbar-item" href="{% url 'login' %}">Log In</a>
+                <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
+            </div>
+    {% endif %}
         </nav>
         <div class="main_content_container">
             {% block content %}{% endblock %}

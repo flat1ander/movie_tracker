@@ -11,4 +11,5 @@ urlpatterns = [
     path('movies/<int:pk>/delete', views.MovieDelete.as_view(), name="movie_delete"),
     path('movies/<int:pk>/casts/new/', views.CastCreate.as_view(), name="cast_create"),
     path('collections/<int:pk>/casts/<int:cast_pk>/', views.CollectionCastAssoc.as_view(), name="collection_cast_assoc"),
+    path('accounts/signup/', views.Signup.as_view(), name="signup"),
 ]
