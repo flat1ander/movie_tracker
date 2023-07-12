@@ -1,10 +1,90 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
 
-<h1 class="title">Sign Up</h1>
-<form method="post" action="{% url 'signup' %}">
-    {% csrf_token %} {{ form.as_p }}
-    <input type="submit" class="btn" value="Sign Up" />
-    <input type="hidden" name="next" value="{{ next }}" />
-</form>
+{% block content %}
+
+<style>
+    .form_styling {
+        width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: hsl(348, 86%, 43%);
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+
+    .form_styling h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: xx-large;
+        color: black;
+    }
+
+    .form_styling form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form_styling label {
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .form_styling input[type="text"],
+    .form_styling textarea,
+    .form_styling input[type="number"] {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: vertical;
+    }
+
+    .form_styling input[type="submit"] {
+        padding: 10px;
+        font-size: 16px;
+        background-color: hsl(0, 0%, 21%);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .form_styling input[type="submit"]:hover {
+        background-color: grey;
+    }
+
+    .form_styling .requirements {
+        font-size: 14px;
+        margin-top: 10px;
+        color: black;
+    }
+</style>
+
+<div class="form_styling">
+    <h1>Sign Up</h1>
+    <form method="post" action="{% url 'signup' %}" class="has-text-black">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password1">Password:</label>
+        <input type="password" id="password1" name="password1">
+        <p class="requirements">
+            Your password cant be too similar to your other personal information.<br>
+            Your password must contain at least 8 characters.<br>
+            Your password cant be a commonly used password.<br>
+            Your password cant be entirely numeric.
+        </p>
+        <br>
+        <label for="password2">Confirm Password:</label>
+        <input type="password" id="password2" name="password2">
+        <p class="requirements">Enter the same password as before, for verification.</p>
+        <br>
+        <input type="submit" value="Sign Up">
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+</div>
 
 {% endblock %}
+
+    

@@ -36,8 +36,6 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         resize: vertical;
-        background-color: hsl(0, 0%, 21%);
-        color: white;
     }
 
     .form_styling input[type="submit"] {
@@ -61,19 +59,19 @@
     <form method="post" class="has-text-black">
         {% csrf_token %}
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" class="dark-grey-input">
+        <input type="text" id="name" name="name">
         
         <label for="image">Image URL:</label>
-        <input type="text" id="image" name="image" class="dark-grey-input">
+        <input type="text" id="image" name="image">
         
         <label for="release_date">Release Date:</label>
-        <input type="text" id="release_date" name="release_date" class="dark-grey-input">
+        <input type="text" id="release_date" name="release_date">
         
         <label for="synopsis">Synopsis:</label>
-        <textarea id="synopsis" name="synopsis" class="dark-grey-input"></textarea>
+        <textarea id="synopsis" name="synopsis"></textarea>
         
         <label for="rating">Rating:</label>
-        <input type="number" id="rating" name="rating" min="0" class="dark-grey-input"><br>
+        <input type="number" id="rating" name="rating" min="0"><br>
         
         <input type="submit" value="Submit">
     </form>

@@ -1,10 +1,74 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
 
-<h1 class="title">Log In</h1>
-<form method="post" action="{% url 'login' %}">
-    {% csrf_token %} {{ form.as_p }}
-    <input type="submit" class="btn" value="login" />
-    <input type="hidden" name="next" value="{{ next }}" />
-</form>
+{% block content %}
+
+<style>
+    .form_styling {
+        width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: hsl(348, 86%, 43%);
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+
+    .form_styling h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: xx-large;
+        color: black;
+    }
+
+    .form_styling form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form_styling label {
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .form_styling input[type="text"],
+    .form_styling textarea,
+    .form_styling input[type="number"] {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: vertical;
+        background-color: hsl(0, 0%, 21%);
+        color: white;
+    }
+
+    .form_styling input[type="submit"] {
+        padding: 10px;
+        font-size: 16px;
+        background-color: hsl(0, 0%, 21%);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .form_styling input[type="submit"]:hover {
+        background-color: grey;
+    }
+</style>
+
+<div class="form_styling">
+    <h1>Log In</h1>
+    <form method="post" action="{% url 'login' %}" class="has-text-black">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" class="dark-grey-input">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="dark-grey-input">
+        <br>
+        <input type="submit" value="Login">
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+</div>
 
 {% endblock %}
