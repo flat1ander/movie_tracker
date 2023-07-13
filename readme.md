@@ -34,5 +34,4 @@ SHOW PAGE:
 - Have an application with full CRUD functionality by Tuesday June 10th.
 - Spend time working on stretch features like authentication. Either complete authentication or move on by the end of class on Saturday 7/15/23.
 - Work on additional styling and have styling completed by the end of class on Monday 7/17.
-- Work on deploying the project to neon and render. The hope is to have that completed by the end of class on Thursday 7/20.
- 
+- Work on deploying the project to neon and render. The hope is to have that completed by the end of class on Thursday 7/20
