@@ -1,12 +1,12 @@
-# Install pipenv if not already installed
 pip3 install --user pipenv
 
 # Activate the virtual environment
-/opt/render/project/src/.venv/bin/pipenv shell
+source /opt/render/project/src/.venv/bin/activate
 
 # Install dependencies
-pipenv install --ignore-pipfile
+pip3 install -r deps.txt
 
 # Run the build commands
 python3 manage.py collectstatic --no-input
 python3 manage.py migrate
+
