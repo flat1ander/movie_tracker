@@ -88,31 +88,31 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 # To use Neon with Django, you have to create a Project on Neon and specify the project connection settings in your settings.py in the same way as for standalone Postgres.
 
-# DATABASES = {
-#   'default': {
-#     'ENGINE': 'django.db.backends.postgresql',
-#     'NAME': 'movie_tracker',
-#     'USER': os.environ['DB_USER'],
-#     'PASSWORD': os.environ['DB_PW'],
-#     'HOST': os.environ['DB_HOST'],
-#     'PORT': '5432',
-#     'OPTIONS': {
-#             'sslmode': 'require',
-#         },
-#   }
-# }
-
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'movie_tracker',
-        **dj_database_url.config(
-            conn_max_age=600,
-            conn_health_checks=True,
-        ),
-    }
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'movie_tracker',
+    'USER': os.environ['DB_USER'],
+    'PASSWORD': os.environ['DB_PW'],
+    'HOST': os.environ['DB_HOST'],
+    'PORT': '5432',
+    'OPTIONS': {
+            'sslmode': 'require',
+        },
+  }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'movie_tracker',
+#         **dj_database_url.config(
+#             conn_max_age=600,
+#             conn_health_checks=True,
+#         ),
+#     }
+# }
 
 
 
@@ -148,18 +148,9 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = 'static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'main_app/static')]
 
 LOGIN_REDIRECT_URL = '/movies/'
 LOGOUT_REDIRECT_URL = '/'

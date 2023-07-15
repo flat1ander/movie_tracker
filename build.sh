@@ -1,5 +1,3 @@
-pip3 install --user pipenv
-
 # Activate the virtual environment
 source /opt/render/project/src/.venv/bin/activate
 
