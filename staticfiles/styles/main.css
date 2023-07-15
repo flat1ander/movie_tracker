@@ -1,0 +1,179 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZW1wdHklMjB0aGVhdGVyfGVufDB8fDB8fHww&w=1000&q=80");
+    color: #ffffff;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1,
+h2,
+h3 {
+  color: #ffffff;
+}
+
+.container {
+  padding: 40px;
+  padding-right: 0;
+}
+
+.title {
+  color: #ffffff;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-content: center;
+  gap: 30px;
+}
+
+.gallery .card {
+  transition: 0.1s linear;
+}
+
+.gallery .card:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+p {
+  font-size: 15px;
+  color: white;
+}
+
+/* .detail__name {
+  position: absolute;
+  z-index: 5;
+  top: 400px;
+} */
+
+.detail__container {
+  margin-top: 20px;
+  
+}
+
+.movie-synopsis{
+    border-style: solid;
+    border-color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 4px 2px 2px white;
+    border-radius: 25px;
+}
+
+.synopsis_title {
+    margin: 10px;
+}
+
+.detail_buttons {
+    margin: 10px;
+}
+
+.movie_image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 25%;
+  overflow: hidden;
+  opacity: 0.5;
+  padding: 10px;
+}
+
+.movie_name {
+  margin: 10px;
+}
+
+.movie_date {
+  margin: 10px;
+}
+
+.navigation {
+  margin-bottom: 25px;
+}
+
+.main_content_container {
+  max-width: 85%;
+  margin: auto;
+}
+
+.navbar-item,
+.navbar-link {
+  color: black;
+}
+
+.navbar-burger {
+  color: black;
+}
+
+.burger-text {
+  color: black;
+}
+
+.detail__page {
+  max-width: 60%;
+  max-height: 60%;
+  border-style: solid;
+  border-color: red;
+  margin: auto;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.detail__cast {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cast {
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 0.2fr 0.5fr 0.3fr;
+  border-radius: 5px;
+}
+
+.cast:hover {
+  background-color: hsla(0, 0%, 100%, 0.1);
+  cursor: pointer;
+}
+
+.detail_buttons {
+  padding: 10px;
+}
+
+.form_styling {
+  max-width: 60%;
+  max-height: 60%;
+  border-style: solid;
+  border-color: red;
+  margin: auto;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.main_home_container {
+  max-width: 60%;
+  max-height: 60%;
+  border-style: solid;
+  border-color: red;
+  margin: auto;
+  border-radius: 25px;
+  padding: 10px;
+  background-image: url("https://i.imgur.com/bKIV3IR.jpg");
+}
+
+.home_header {
+  font-size: xx-large
+}
+
+.home_content {
+  font-size: large;
+}
+
+.home_subheader {
+  font-size: x-large;
+}
