@@ -97,12 +97,19 @@ CORS_ALLOW_ALL_ORIGINS = True
 # }
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'movie_tracker',
+#         **dj_database_url.config(conn_max_age=600, conn_health_checks=True),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'movie_tracker',
-        **dj_database_url.config(conn_max_age=600, conn_health_checks=True),
-    }
+      'default': dj_database_url.config(
+        conn_max_age=600,
+        conn_health_checks=True,
+    ),
 }
 
 
