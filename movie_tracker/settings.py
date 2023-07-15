@@ -154,7 +154,7 @@ LOGIN_REDIRECT_URL = '/movies/'
 LOGOUT_REDIRECT_URL = '/'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, '/main_app/static')
+STATIC_ROOT = os.path.join(BASE_DIR, '/main_app/static/')
 if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
