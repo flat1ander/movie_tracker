@@ -153,7 +153,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/movies/'
 LOGOUT_REDIRECT_URL = '/'
 
-STATIC_URL = '/static/'
+STATIC_URL = 'main_app/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, '/main_app/static/')
 if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
