@@ -83,19 +83,19 @@ WSGI_APPLICATION = 'movie_tracker.wsgi.application'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-# DATABASES = {
-#   'default': {
-#     'ENGINE': 'django.db.backends.postgresql',
-#     'NAME': 'movie_tracker',
-#     'USER': os.environ['DB_USER'],
-#     'PASSWORD': os.environ['DB_PW'],
-#     'HOST': os.environ['DB_HOST'],
-#     'PORT': '5432',
-#     'OPTIONS': {
-#             'sslmode': 'require',
-#         },
-#   }
-# }
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'movie_tracker',
+    'USER': os.environ['DB_USER'],
+    'PASSWORD': os.environ['DB_PW'],
+    'HOST': os.environ['DB_HOST'],
+    'PORT': '5432',
+    'OPTIONS': {
+            'sslmode': 'require',
+        },
+  }
+}
 
 
 # DATABASES = {
@@ -106,12 +106,12 @@ CORS_ALLOW_ALL_ORIGINS = True
 #     }
 # }
 
-DATABASES = {
-      'default': dj_database_url.config(
-        conn_max_age=600,
-        conn_health_checks=True,
-    ),
-}
+# DATABASES = {
+#       'default': dj_database_url.config(
+#         conn_max_age=600,
+#         conn_health_checks=True,
+#     ),
+# }
 
 
 
