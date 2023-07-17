@@ -132,7 +132,7 @@ p {
   width: 100%;
   padding: 10px;
   display: grid;
-  grid-template-columns: 0.2fr 0.5fr 0.3fr;
+  grid-template-columns: 0.4fr 0.4fr 0.2fr;
   border-radius: 5px;
 }
 
@@ -175,4 +175,31 @@ p {
 
 .home_subheader {
   font-size: x-large;
+}
+
+@media only screen and (max-width: 768px) {
+  .detail__page {
+    max-width: 80%;
+    max-height: 80%;
+    border-style: solid;
+    border-color: red;
+    margin: auto;
+    border-radius: 25px;
+    padding: 10px;
+  }
+  .movie_image {
+ display: none;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .detail__page {
+    max-width: 95%;
+    max-height: 95%;
+    border-style: solid;
+    border-color: red;
+    margin: auto;
+    border-radius: 25px;
+    padding: 7px;
+  }
 }
